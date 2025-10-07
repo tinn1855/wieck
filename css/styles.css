@@ -1,0 +1,300 @@
+/* CSS Variables   */
+:root {
+  /* Color pallete  */
+  --blue-100: #eff9fc;
+  --blue-200: #4cafd2;
+  --blue-500: #006e9e;
+  --blue-300: #7dcae3;
+  --blue-600: #056187;
+  --blue-700: #004b6e;
+  --neutral-100: #f1f3f3;
+  --neutral-200: #8c9097;
+  --neutral-300: #d8dadc;
+  --neutral-500: #414552;
+  --neutral-600: #2d323e;
+  --neutral-700: #191e29;
+  --neutral-900: #2d323e;
+  --black: #181d27;
+  --white: #fafafa;
+  --red-200: #fda29b;
+  --red-500: #d92d20;
+
+  --primary-color: var(--blue-500);
+  --secondary-color: var(--neutral-500);
+  --text-brand: var(--blue-500);
+  --text-primary: var(--neutral-700);
+  --text-secondary: var(--neutral-500);
+  --text-error: var(--red-500);
+  --background-color: var(--white);
+  --foreground-color: var(--black);
+  --border: var(--neutral-300);
+  --border-error: var(--red-200);
+  --focus-ring: var(--blue-300);
+  --focus-ring-error: var(--red-500);
+
+  /* Typography */
+  --font-primary: "Inter", sans-serif;
+
+  /* Font Sizes  */
+  --line-height-display: 64px;
+  --line-height-button: 24px;
+  --line-height-button-sm: 22px;
+  --line-height-input: 24px;
+  --line-height-h1: 56px;
+  --line-height-h2: 48px;
+  --line-height-h3: 40px;
+  --line-height-h4: 32px;
+  --line-height-h5: 28px;
+  --line-height-h6: 26px;
+  --line-height-sub-heading: 26px;
+  --line-height-body: 24px;
+  --line-height-stat-number-lg: 68px;
+  --line-height-stat-number-md: 56px;
+
+  --font-size-h1: 48px;
+  --font-size-h2: 40px;
+  --font-size-h3: 32px;
+  --font-size-h4: 24px;
+  --font-size-h5: 20px;
+  --font-size-h6: 18px;
+  --font-size-stat-number-lg: 60px;
+  --font-size-stat-number-md: 48px;
+
+  --font-size-sub-heading: 16px;
+  --font-size-body: 16px;
+
+  --font-size-btn: 16px;
+  --font-size-btn-sm: 14px;
+  --font-size-input: 16px;
+}
+
+/* BASE STYLE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+}
+
+html,
+body {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  scroll-behavior: smooth;
+  line-height: var(--line-height-body);
+  font-size: var(--font-size-body);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+}
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+}
+h3 {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+}
+h4 {
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+}
+h5 {
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
+}
+h6 {
+  font-size: var(--font-size-h6);
+  line-height: var(--line-height-h6);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: var(--font-size-btn);
+  line-height: var(--line-height-button);
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.btn-sm {
+  font-size: var(--font-size-btn-sm);
+  line-height: var(--line-height-button-sm);
+  padding: 8px 20px;
+}
+
+.btn:focus {
+  outline: 3px solid var(--focus-ring);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background-color: var(--blue-700);
+}
+.btn-primary:active {
+  background-color: var(--blue-600);
+}
+.btn-primary:disabled {
+  background-color: var(--blue-200);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+.btn-secondary:hover {
+  background-color: var(--neutral-700);
+}
+.btn-secondary:active {
+  background-color: var(--neutral-600);
+}
+.btn-secondary:disabled {
+  background-color: var(--neutral-200);
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  border: 1px solid var(--border);
+}
+.btn-outline:hover {
+  color: var(--primary-color);
+}
+.btn-outline:active {
+  background-color: var(--background-white-pressed);
+}
+
+.btn-icon {
+  border: 1px solid var(--border);
+  padding: 12px;
+  vertical-align: middle;
+}
+
+.btn-icon.btn-sm {
+  padding: 8px;
+}
+
+.btn-icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  stroke: currentColor;
+}
+
+.btn-icon:hover {
+  color: var(--primary-color);
+}
+.btn-icon:active {
+  background-color: var(--background-white-pressed);
+}
+.btn-icon:disabled {
+  border-color: var(--border);
+  background-color: var(--background-white-pressed);
+  cursor: not-allowed;
+}
+
+.input {
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  font-size: var(--font-size-input);
+  line-height: var(--line-height-input);
+}
+
+.input-secondary {
+  background-color: var(--neutral-900);
+  color: var(--white);
+}
+.input:focus {
+  outline: 3px solid var(--focus-ring);
+}
+.input:disabled {
+  background-color: var(--neutral-100);
+  cursor: not-allowed;
+}
+.input-secondary:disabled {
+  background-color: var(--neutral-500);
+  cursor: not-allowed;
+}
+
+.input-error {
+  border-color: var(--border-error);
+}
+
+.input-error:focus {
+  outline: 3px solid var(--focus-ring-error);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper svg {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-error-message {
+  font-size: 14px;
+  color: var(--text-error);
+}
+
+/* TYPOGRAPHY  */
+.sub-heading {
+  font-size: var(--font-size-sub-heading);
+  line-height: var(--line-height-sub-heading);
+  color: var(--text-secondary);
+}
+
+.stat-number-lg {
+  font-size: var(--font-size-stat-number-lg);
+  line-height: var(--line-height-stat-number-lg);
+}
+
+.stat-number-md {
+  font-size: var(--font-size-stat-number-md);
+  line-height: var(--line-height-stat-number-md);
+}
+
+/* COMMON STYLES  */
+.bg-brand-secondary {
+  background-color: var(--blue-100);
+}
+
+/* UTILITIES  */
+/* Utilities for font size */
+.lg {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+/* COMPONENTS  */
