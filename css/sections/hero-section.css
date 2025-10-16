@@ -1,0 +1,77 @@
+.hero-section {
+  position: relative;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, var(--blue-500), var(--blue-300)) 1;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 10;
+  padding-top: 80px;
+  position: absolute;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: end;
+  padding-top: 140px;
+}
+
+.stat-item {
+  background-color: var(--white);
+  padding: 32px;
+  width: 100%;
+  position: relative;
+}
+.stat-item:first-child {
+  height: 220px;
+}
+.stat-item:nth-child(2) {
+  height: 320px;
+}
+.stat-item:nth-child(3) {
+  height: 560px;
+}
+
+.stat-icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.hero-image-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-image {
+  width: 100%;
+}
+
+.stat-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgb(0 110 158) 0%,
+    rgba(0, 75, 110, 0) 100%
+  );
+  color: var(--white);
+  padding: 32px;
+}

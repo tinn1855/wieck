@@ -16,15 +16,16 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <script defer src="js/main.js"></script>
+    <script defer src="js/navigation.js"></script>
   </head>
   <body>
     <!-- header  -->
-    <header class="header-wrapper container">
-      <div class="header-container">
+    <header class="header">
+      <div class="container header-container">
         <a href="/" class="logo">
           <img src="assets/image/wieck-logo.png" alt="Wieck logo" />
         </a>
-        <nav aria-label="Main navigation">
+        <nav class="main-nav" aria-label="Main navigation">
           <ul class="header-nav">
             <li><a href="#" aria-current="page">Home</a></li>
             <li><a href="#">In Memory of James F. Wieck</a></li>
@@ -44,7 +45,11 @@
             <li><a href="#">Contact Us</a></li>
             <li><a href="#">Privacy Policy</a></li>
           </ul>
+          <a href="about-us" class="btn btn-primary header__cta">
+            Contact Us
+          </a>
         </nav>
+
         <button class="nav-icon btn btn-nav-bar" id="mobile-nav-toggle">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -126,8 +131,8 @@
             <p>Last 12 months</p>
             <div class="stat-icon">
               <svg
-                width="117"
-                height="112"
+                width="192"
+                height="192"
                 viewBox="0 0 117 112"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -169,10 +174,10 @@
     <!-- end hero section  -->
 
     <!-- What We Do -->
-    <section class="what-we-do-section">
+    <section class="section">
       <div class="container">
         <div class="service-header">
-          <h2>What We Do</h2>
+          <h2 class="heading-2">What We Do</h2>
           <p class="sub-heading lg">
             From custom newsroom to digital asset management, we provide the
             complete technology stack for modern media organizations.
@@ -184,7 +189,7 @@
     <!-- End what we do  -->
 
     <!-- brand logos  -->
-    <section class="brand-logos">
+    <section class="brand-logos section">
       <div class="container">
         <div class="brand-logos-title">
           <svg
@@ -207,7 +212,7 @@
               stroke-linejoin="round"
             />
           </svg>
-          <h6>Trusted by 500+ Enterprise Newsrooms</h6>
+          <h6 class="heading-6">Trusted by 500+ Enterprise Newsrooms</h6>
         </div>
         <div class="list-brand-logo">
           <img src="assets/image/brand-logo/Nissan.png" alt="Nissan Logo" />
@@ -253,72 +258,82 @@
     <!-- end brand logos  -->
 
     <!-- resources section  -->
-    <section class="container blog-section">
-      <h2>Resources and Insights</h2>
-      <p class="sub-heading lg">
-        Expert guidance for modern communications teams
-      </p>
-      <div class="blog-list">
-        <article class="blog-item-featured">
-          <div class="blog-item-featured-content">
-            <span class="caption">CATEGORY</span>
-            <h3>What is CommTech, Anyway?</h3>
-            <p>
-              Listen long enough and it becomes mind-numbing. What do all these
-              things mean, anyway? And do they actually mean something specific
-              enough to warrant an entire new term?
-            </p>
-          </div>
-          <div class="blog-item-featured-image">
-            <img
-              src="assets/image/thumbnail/thumbnail-02.jpg"
-              alt="Thumbnail"
-            />
-          </div>
-        </article>
-        <article class="blog-item">
-          <div class="blog-item-content">
-            <span class="caption">CATEGORY</span>
-            <h5>How to Build a Business Case for CommTech</h5>
-            <p>
-              If you’re in the market for new communications technology, you
-              know that getting buy-in from leadership can be a challenge. Here
-              are some tips to help you build a strong business case.
-            </p>
-          </div>
-          <div class="blog-item-image">
-            <img
-              src="assets/image/thumbnail/thumbnail-03.jpg"
-              alt="Thumbnail"
-            />
-          </div>
-        </article>
-        <article class="blog-item">
-          <div class="blog-item-content">
-            <span class="caption">CATEGORY</span>
-            <h5>How to Build a Business Case for CommTech</h5>
-            <p>
-              If you’re in the market for new communications technology, you
-              know that getting buy-in from leadership can be a challenge. Here
-              are some tips to help you build a strong business case.
-            </p>
-          </div>
-          <div class="blog-item-image">
-            <img
-              src="assets/image/thumbnail/thumbnail-03.jpg"
-              alt="Thumbnail"
-            />
-          </div>
-        </article>
-      </div>
-      <div class="blog-actions">
-        <button class="btn btn-outline">View More Posts</button>
+    <section class="section">
+      <div class="container">
+        <h2 class="heading-2">Resources and Insights</h2>
+        <p class="sub-heading lg">
+          Expert guidance for modern communications teams
+        </p>
+        <div class="blog-list">
+          <article class="blog-item hover-card">
+            <div class="blog-item-content">
+              <span class="caption">Sep 10, 2025</span>
+              <h3>What is CommTech, Anyway?</h3>
+              <p class="text-line-clamp-5">
+                Listen long enough and it becomes mind-numbing. What do all
+                these things mean, anyway? And do they actually mean something
+                specific enough to warrant an entire new term?
+              </p>
+            </div>
+            <div class="blog-item-image">
+              <img
+                src="assets/image/thumbnail/thumbnail-02.jpg"
+                alt="Thumbnail"
+              />
+            </div>
+          </article>
+          <article class="blog-item hover-card">
+            <div class="blog-item-content">
+              <span class="caption">Sep 10, 2025</span>
+              <div class="blog-item-text">
+                <h5 class="heading-5 text-line-clamp-2">
+                  How to Build a Business Case for CommTech
+                </h5>
+                <p class="text-line-clamp-5">
+                  If you’re in the market for new communications technology, you
+                  know that getting buy-in from leadership can be a challenge.
+                  Here are some tips to help you build a strong business case.
+                </p>
+              </div>
+            </div>
+            <div class="blog-item-image">
+              <img
+                src="assets/image/thumbnail/thumbnail-03.jpg"
+                alt="Thumbnail"
+              />
+            </div>
+          </article>
+          <article class="blog-item hover-card">
+            <div class="blog-item-content">
+              <span class="caption">Sep 10, 2025</span>
+              <div>
+                <h5 class="heading-5 text-line-clamp-2">
+                  How to Build a Business Case for CommTech
+                </h5>
+                <p class="text-line-clamp-5">
+                  If you’re in the market for new communications technology, you
+                  know that getting buy-in from leadership can be a challenge.
+                  Here are some tips to help you build a strong business case.
+                </p>
+              </div>
+            </div>
+            <div class="blog-item-image">
+              <img
+                src="assets/image/thumbnail/thumbnail-03.jpg"
+                alt="Thumbnail"
+              />
+            </div>
+          </article>
+        </div>
+        <div class="blog-actions">
+          <button class="btn btn-outline">View More Posts</button>
+        </div>
       </div>
     </section>
     <!-- end resources section  -->
 
     <!-- FAQ section  -->
-    <section class="faq-section bg-brand-primary">
+    <section class="section bg-brand-primary">
       <div class="container faq-list">
         <div class="faq-item">
           <h2>Frequently Asked Questions</h2>
@@ -362,9 +377,12 @@
         </div>
         <div class="accordion">
           <div class="accordion-item">
-            <button class="btn">Does WIECK provide analytics?</button>
+            <div class="accordion-toggle">
+              <button>Does WIECK provide analytics?</button>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
             <div class="accordion-item-content">
-              <p class="">
+              <p>
                 Absolutely. All solutions include robust tracking and reporting
                 to measure reach, engagement, and ROI, helping communications
                 teams justify budgets and optimize strategies.
@@ -378,9 +396,12 @@
           </div>
 
           <div class="accordion-item">
-            <button class="btn">
-              How is WIECK different from other content management platforms?
-            </button>
+            <div class="accordion-toggle">
+              <button>
+                How is WIECK different from other content management platforms?
+              </button>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
             <div class="accordion-item-content">
               <p>
                 WIECK is specifically designed for modern newsrooms and media
@@ -392,7 +413,10 @@
           </div>
 
           <div class="accordion-item">
-            <button class="btn">What products does WIECK offer?</button>
+            <div class="accordion-toggle">
+              <button>What products does WIECK offer?</button>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
             <div class="accordion-item-content">
               <p>
                 We offer Enterprise Newsrooms, Digital Asset Management, WIECK
@@ -403,9 +427,12 @@
           </div>
 
           <div class="accordion-item">
-            <button class="btn">
-              Can WIECK customize solutions for my company's needs?
-            </button>
+            <div class="accordion-toggle">
+              <button>
+                Can WIECK customize solutions for my company's needs?
+              </button>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
             <div class="accordion-item-content">
               <p>
                 Yes, we specialize in custom development and can tailor our
@@ -416,9 +443,10 @@
           </div>
 
           <div class="accordion-item">
-            <button class="btn">
-              How does WIECK support crisis communication?
-            </button>
+            <div class="accordion-toggle">
+              <button>How does WIECK support crisis communication?</button>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
             <div class="accordion-item-content">
               <p>
                 Our platform provides rapid content deployment, real-time
@@ -433,7 +461,7 @@
     <!-- end FAQ section  -->
 
     <!-- contact section  -->
-    <section class="contact-section bg-dark-blue">
+    <section class="contact-section section bg-dark-blue">
       <div class="container">
         <div class="contact-header">
           <h2>Ready to Transform Your Communications?</h2>
@@ -456,7 +484,7 @@
                 cols="50"
                 placeholder="How can we help?"
               ></textarea>
-              <button class="btn btn-primary">Submit</button>
+              <button class="btn btn-primary btn-fruid">Submit</button>
             </div>
           </form>
           <div class="contact-info">

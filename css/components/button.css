@@ -1,0 +1,108 @@
+.btn {
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: var(--font-size-btn);
+  line-height: var(--line-height-button);
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: transparent;
+  max-height: 48px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-sm {
+  font-size: var(--font-size-btn-sm);
+  line-height: var(--line-height-button-sm);
+  padding: 8px 20px;
+}
+
+.btn:focus {
+  outline: 3px solid var(--focus-ring);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background-color: var(--blue-700);
+}
+.btn-primary:active {
+  background-color: var(--blue-600);
+}
+.btn-primary:disabled {
+  background-color: var(--blue-200);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+.btn-secondary:hover {
+  background-color: var(--neutral-700);
+}
+.btn-secondary:active {
+  background-color: var(--neutral-600);
+}
+.btn-secondary:disabled {
+  background-color: var(--neutral-200);
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  border: 1px solid var(--border);
+  background-color: var(--white);
+}
+.btn-outline:hover {
+  color: var(--primary-color);
+}
+.btn-outline:active {
+  background-color: var(--background-white-pressed);
+}
+
+.btn-icon {
+  border: 1px solid var(--border);
+  padding: 12px;
+  vertical-align: middle;
+}
+
+.btn-nav-bar {
+  border: none;
+  padding: 12px;
+  color: var(--neutral-700);
+  transition: all 0.3s ease;
+}
+
+.btn-nav-bar:hover {
+  border-bottom: var(--background-primary);
+}
+
+.btn-icon.btn-sm {
+  padding: 8px;
+}
+
+.btn-icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  stroke: currentColor;
+}
+
+.btn-icon:hover {
+  color: var(--primary-color);
+}
+.btn-icon:active {
+  background-color: var(--background-white-pressed);
+}
+.btn-icon:disabled {
+  border-color: var(--border);
+  background-color: var(--background-white-pressed);
+  cursor: not-allowed;
+}
+
+.btn-fruid {
+  width: 100%;
+  justify-content: center;
+}

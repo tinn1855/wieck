@@ -36,7 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderServices.innerHTML = service
     .map(
       (item) => `
-        <div class="service-card">
+        <a href="#">
+          <div class="service-card hover-card">
             <div class="service-card-content">
               <svg
                 width="48"
@@ -74,9 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
                   stroke-linejoin="round"
                 />
               </svg>
-              <div class="service-text">
-                <h4>${item.title}</h4>
-                <p class="service-description">
+              <div>
+                <h4 class="heading-4">${item.title}</h4>
+                <p class="text-line-clamp-4">
                   ${item.description}
                 </p>
               </div>
@@ -88,32 +89,65 @@ document.addEventListener("DOMContentLoaded", () => {
               />
             </div>
           </div>
+        </a>
     `
     )
     .join("");
 
   accordionItems.forEach((item) => {
     const button = item.querySelector("button");
+    const toggle = item.querySelector(".accordion-toggle");
     const content = item.querySelector(".accordion-item-content");
 
     if (button && content) {
       button.addEventListener("click", () => {
+        // Kiểm tra nếu item hiện tại đang mở
+        const isCurrentlyOpen = content.classList.contains("open");
+
+        // Đếm số item đang mở
+        const openItems = Array.from(accordionItems).filter((otherItem) =>
+          otherItem
+            .querySelector(".accordion-item-content")
+            .classList.contains("open")
+        );
+
+        // Nếu chỉ có 1 item mở và đó là item hiện tại, không cho phép đóng
+        if (isCurrentlyOpen && openItems.length === 1) {
+          return;
+        }
+
+        // Đóng tất cả các item khác
         accordionItems.forEach((otherItem) => {
           if (otherItem !== item) {
             const otherContent = otherItem.querySelector(
               ".accordion-item-content"
             );
+            const otherToggle = otherItem.querySelector(".accordion-toggle");
             const otherButton = otherItem.querySelector("button");
             if (otherContent) otherContent.classList.remove("open");
+            if (otherToggle) otherToggle.classList.remove("active");
             if (otherButton) otherButton.classList.remove("active");
           }
         });
 
+        // Toggle item hiện tại
         content.classList.toggle("open");
+        if (toggle) toggle.classList.toggle("active");
         button.classList.toggle("active");
       });
     }
   });
+
+  // Mở item đầu tiên mặc định
+  if (accordionItems.length > 0) {
+    const firstItem = accordionItems[0];
+    const firstContent = firstItem.querySelector(".accordion-item-content");
+    const firstToggle = firstItem.querySelector(".accordion-toggle");
+    const firstButton = firstItem.querySelector("button");
+    if (firstContent) firstContent.classList.add("open");
+    if (firstToggle) firstToggle.classList.add("active");
+    if (firstButton) firstButton.classList.add("active");
+  }
 
   const mobileNavToggle = document.getElementById("mobile-nav-toggle");
   const mobileNavClose = document.getElementById("mobile-nav-close");

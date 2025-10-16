@@ -38,7 +38,7 @@
   padding: 20px 32px;
   border-bottom: 1px solid var(--border);
   background: var(--white);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .mobile-logo img {
@@ -199,24 +199,16 @@
   }
 
   /* what we do section  */
-
-  .what-we-do-section {
-    padding: 80px 0;
-  }
   .service-header {
     margin-bottom: 40px;
   }
   .service-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
   }
 
   /* brand section  */
-
-  .brand-logos {
-    padding: 80px 0;
-  }
 
   .list-brand-logo {
     display: grid;
@@ -254,9 +246,6 @@
   }
 
   /* faq section  */
-  .faq-section {
-    padding: 80px 0px;
-  }
 
   .faq-list {
     flex-direction: column;
@@ -442,17 +431,8 @@
   .blog-item-content {
     padding: 16px;
   }
-  /* faq section  */
-
-  .faq-section {
-    padding: 48px 0px;
-  }
-
   /* contact section  */
 
-  .contact-section {
-    padding: 48px 0;
-  }
   .contact-form {
     grid-template-columns: 1fr;
     gap: 24px;
