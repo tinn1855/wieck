@@ -1,0 +1,38 @@
+:root {
+  /* Typography */
+  --font-primary: "Inter", sans-serif;
+
+  /* Font Sizes  */
+  --line-height-display: 64px;
+  --line-height-button: 24px;
+  --line-height-button-sm: 22px;
+  --line-height-input: 24px;
+  --line-height-h1: 56px;
+  --line-height-h2: 48px;
+  --line-height-h3: 40px;
+  --line-height-h4: 32px;
+  --line-height-h5: 28px;
+  --line-height-h6: 26px;
+  --line-height-sub-heading: 26px;
+  --line-height-body: 24px;
+  --line-height-stat-number-lg: 68px;
+  --line-height-stat-number-md: 56px;
+  --line-height-caption: 100%;
+
+  --font-size-h1: 48px;
+  --font-size-h2: 40px;
+  --font-size-h3: 32px;
+  --font-size-h4: 24px;
+  --font-size-h5: 20px;
+  --font-size-h6: 18px;
+  --font-size-stat-number-lg: 60px;
+  --font-size-stat-number-md: 48px;
+  --font-size-caption: 12px;
+
+  --font-size-sub-heading: 16px;
+  --font-size-body: 16px;
+
+  --font-size-btn: 16px;
+  --font-size-btn-sm: 14px;
+  --font-size-input: 16px;
+}

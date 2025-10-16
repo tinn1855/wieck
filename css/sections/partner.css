@@ -1,0 +1,26 @@
+/* brand logo  */
+.brand-logos {
+  background-color: var(--blue-900);
+  color: var(--white);
+}
+
+.brand-logos-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.list-brand-logo {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
+  gap: 48px;
+  row-gap: 24px;
+}
+.list-brand-logo img {
+  padding: 4px 0px;
+}

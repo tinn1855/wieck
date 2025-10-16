@@ -1,0 +1,35 @@
+/* Header Base Styles */
+.header {
+  padding: 16px 0;
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+  transition: padding 0.2s ease-in-out;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: padding 0.3s ease;
+}
+
+.header__cta {
+  display: none;
+}
+
+.header--scrolled .header__cta {
+  display: inline-flex;
+}
+
+@media (max-width: 768px) {
+  .header--fixed .header-container {
+    padding: 0 20px;
+  }
+
+  .body--header-fixed {
+    padding-top: 70px;
+  }
+}
