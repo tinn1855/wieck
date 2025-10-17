@@ -29,6 +29,7 @@
   --text-error: var(--red-500);
   --background-color: var(--white);
   --background-primary: var(--neutral-100);
+  --background-secondary: var(--blue-50);
   --background-teriary: var(--blue-900);
   --foreground-color: var(--black);
   --border: var(--neutral-300);

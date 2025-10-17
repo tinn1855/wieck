@@ -10,6 +10,10 @@
   padding: var(--section-padding);
 }
 
+.bg-primary {
+  background-color: var(--background-primary);
+}
+
 .bg-brand-primary {
   background-color: var(--blue-200);
   position: relative;

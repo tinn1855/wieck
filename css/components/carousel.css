@@ -1,0 +1,129 @@
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-content {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 40px 0;
+  margin-top: 48px;
+  background-color: var(--white);
+}
+
+.carousel-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.carousel-card-logo {
+  margin-bottom: 24px;
+}
+
+.carousel-card-stat {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 16px;
+  gap: 24px;
+  background-color: var(--background-secondary);
+  color: var(--primary-color);
+}
+
+.carousel-card-image {
+  padding: 8px 40px;
+}
+
+.carousel-card-image img {
+  width: 300px;
+  height: 450px;
+  transform: rotate(-3deg);
+  flex-shrink: 0;
+  aspect-ratio: 2/3;
+  box-shadow: var(--shadow-lg);
+}
+
+.carousel-card-feedback {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 0 40px;
+}
+
+.author {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.author img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  aspect-ratio: 1/1;
+  background-color: var(--neutral-500);
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  width: 16px;
+  height: 16px;
+  background-color: var(--primary-color);
+}
+
+.btn-prev {
+  position: absolute;
+  top: 50%;
+  transform: translate(-80px, -50%);
+  z-index: 10;
+}
+
+.btn-next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(80px, -50%);
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .carousel-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .carousel-card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-prev {
+    transform: translate(-8px, 50%);
+  }
+  .btn-next {
+    transform: translate(8px, 50%);
+  }
+}

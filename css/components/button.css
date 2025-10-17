@@ -64,8 +64,13 @@
 
 .btn-icon {
   border: 1px solid var(--border);
+  background-color: var(--white);
   padding: 12px;
-  vertical-align: middle;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-nav-bar {
