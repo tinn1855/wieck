@@ -80,3 +80,10 @@ input:focus,
 textarea:focus {
   outline: 3px solid var(--focus-ring);
 }
+
+blockquote {
+  border-left: 1px solid var(--text-brand);
+  color: var(--text-secondary);
+  padding-left: 24px;
+  margin: 24px 0;
+}
