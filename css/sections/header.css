@@ -24,12 +24,22 @@
   display: inline-flex;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .header--fixed .header-container {
     padding: 0 20px;
   }
 
   .body--header-fixed {
     padding-top: 70px;
+  }
+
+  #header__cta {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 16px 0;
   }
 }

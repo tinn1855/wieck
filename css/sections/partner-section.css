@@ -24,3 +24,39 @@
 .list-brand-logo img {
   padding: 4px 0px;
 }
+
+@media (max-width: 1024px) {
+  .list-brand-logo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 68px;
+    row-gap: 24px;
+    align-items: center;
+    align-content: center;
+  }
+
+  .brand-logo-item {
+    max-width: 128px;
+    height: 64px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-logos {
+    padding: 48px 0;
+  }
+
+  .list-brand-logo {
+    gap: 36px;
+  }
+  .list-brand-logo img {
+    max-width: 96px;
+    width: 100%;
+    height: 48px;
+    object-fit: contain;
+  }
+  .brand-logos-title {
+    margin-bottom: 24px;
+  }
+}

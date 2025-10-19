@@ -31,3 +31,29 @@
   flex-direction: column;
   gap: 16px;
 }
+
+@media (max-width: 1024px) {
+  .service-header {
+    margin-bottom: 40px;
+  }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .what-we-do-section {
+    padding: 48px 0;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .service-card img {
+    height: 180px;
+  }
+}
