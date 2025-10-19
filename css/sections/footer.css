@@ -38,7 +38,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 40px;
+  padding: 24px 0px;
 }
 
 .footer-bottom-links {
@@ -53,4 +53,57 @@
 .footer-links-list li a:hover,
 .footer-bottom-links li a:hover {
   color: var(--text-brand);
+}
+
+@media (max-width: 1024px) {
+  .footer-content {
+    padding: 48px 20px;
+    display: grid;
+    row-gap: 48px;
+    flex-direction: column;
+  }
+  .footer-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .footer-about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .footer-links section {
+    max-width: 100%;
+  }
+  .footer-bottom {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    padding-top: 32px;
+  }
+  .footer-content {
+    gap: 16px;
+  }
+  .footer-about {
+    grid-template-columns: 1fr;
+  }
+  .footer-links {
+    grid-template-columns: 1fr;
+    margin-bottom: 32px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    padding: 16px 0;
+    gap: 16px;
+  }
 }

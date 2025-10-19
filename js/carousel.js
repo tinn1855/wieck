@@ -24,10 +24,8 @@ function showSlide(index) {
     currentIndex = index;
   }
 
-  // dịch chuyển track
   track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-  // cập nhật dots
   dots.forEach((dot) => dot.classList.remove("active"));
   dots[currentIndex].classList.add("active");
 }
@@ -46,5 +44,4 @@ dots.forEach((dot, i) => {
   });
 });
 
-// khởi tạo
 showSlide(currentIndex);

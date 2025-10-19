@@ -187,7 +187,32 @@
 }
 
 @media (max-width: 1024px) {
+  .container {
+    padding: 0 32px;
+  }
   .bg-brand-primary::after {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  .heading-1 {
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-h3);
+  }
+  .heading-2 {
+    font-size: var(--font-size-h4);
+    line-height: var(--line-height-h4);
+  }
+  .heading-3 {
+    font-size: var(--font-size-h5);
+    line-height: var(--line-height-h5);
+  }
+
+  .heading-6 {
+    font-size: 14px;
   }
 }

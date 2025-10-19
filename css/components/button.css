@@ -111,3 +111,10 @@
   width: 100%;
   justify-content: center;
 }
+
+@media (max-width: 768px) {
+  .btn {
+    font-size: var(--font-size-btn-sm);
+    line-height: var(--line-height-button-sm);
+  }
+}

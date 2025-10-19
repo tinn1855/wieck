@@ -97,3 +97,12 @@
 .dropdown-menu li:last-child a {
   border-bottom: none;
 }
+
+@media (max-width: 1024px) {
+  .nav-icon {
+    display: block;
+  }
+  .header-nav {
+    display: none;
+  }
+}
