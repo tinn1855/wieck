@@ -14,6 +14,7 @@
   --line-height-h5: 28px;
   --line-height-h6: 26px;
   --line-height-sub-heading: 26px;
+  --line-height-sub-heading-lg: 26px;
   --line-height-body: 24px;
   --line-height-stat-number-lg: 68px;
   --line-height-stat-number-md: 56px;
@@ -29,6 +30,7 @@
   --font-size-stat-number-md: 48px;
   --font-size-caption: 12px;
 
+  --font-size-sub-heading-lg: 18px;
   --font-size-sub-heading: 16px;
   --font-size-body: 16px;
 

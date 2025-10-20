@@ -37,9 +37,3 @@
     display: none;
   }
 }
-
-@media (max-width: 768px) {
-  .header-container {
-    padding: 16px 0;
-  }
-}

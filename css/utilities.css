@@ -154,6 +154,17 @@
   color: var(--text-secondary);
   max-width: 690px;
 }
+.sub-heading-lg {
+  font-size: var(--font-size-sub-heading-lg);
+  line-height: var(--line-height-sub-heading-lg);
+  color: var(--text-secondary);
+  max-width: 690px;
+}
+
+.py-6 {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
 
 /* Text utilities */
 
@@ -176,6 +187,7 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  height: 96px;
 }
 
 .text-line-clamp-5 {
@@ -192,6 +204,12 @@
   }
   .bg-brand-primary::after {
     width: 100%;
+  }
+  .sub-heading-lg {
+    font-size: var(--font-size-sub-heading);
+    line-height: var(--line-height-sub-heading);
+    color: var(--text-secondary);
+    max-width: 690px;
   }
 }
 
