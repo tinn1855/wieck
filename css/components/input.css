@@ -8,6 +8,7 @@
 .input-secondary {
   background-color: var(--neutral-900);
   color: var(--white);
+  border: 1px solid var(--border);
 }
 .input:focus {
   outline: 3px solid var(--focus-ring);
