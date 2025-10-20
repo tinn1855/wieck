@@ -1,0 +1,52 @@
+.hero-contact-section {
+  padding: 152px 0;
+}
+
+.contact-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 32px;
+}
+.contact-action-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-phone {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 1024px) {
+  .hero-contact-section {
+    padding: 112px 0px;
+  }
+
+  .contact-action {
+    grid-column: span 3;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+  }
+
+  .contact-action-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-contact-section {
+    padding: 84px 0px;
+  }
+  .contact-action {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
