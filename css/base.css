@@ -85,7 +85,15 @@ blockquote {
   border-left: 1px solid var(--text-brand);
   color: var(--text-secondary);
   padding-left: 24px;
-  margin: 24px 0;
+  margin-bottom: 24px;
+}
+
+blockquote p {
+  margin-bottom: 16px;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
 }
 
 address {
