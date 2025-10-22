@@ -83,6 +83,17 @@
   transition: all 0.5s ease-in-out;
 }
 
+.list-ul {
+  margin-bottom: 24px;
+}
+.list-ul ul {
+  margin-bottom: 0;
+}
+.list-ul li {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
 /* Typography utilities  */
 
 .stat-number {
@@ -199,6 +210,10 @@
 .text-sm {
   font-size: var(--font-size-sm);
   line-height: var(--line-height-sm);
+}
+.text-underline {
+  text-decoration: underline;
+  padding-bottom: 2px;
 }
 
 /* image utilities */
