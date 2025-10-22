@@ -94,6 +94,7 @@
   font-size: var(--font-size-caption);
   line-height: var(--line-height-caption);
   text-transform: uppercase;
+  margin-bottom: 16px;
 }
 
 .lg {
