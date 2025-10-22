@@ -19,6 +19,7 @@
   --line-height-stat-number-lg: 68px;
   --line-height-stat-number-md: 56px;
   --line-height-caption: 100%;
+  --line-height-sm: 22px;
 
   --font-size-h1: 48px;
   --font-size-h2: 40px;
@@ -29,6 +30,7 @@
   --font-size-stat-number-lg: 60px;
   --font-size-stat-number-md: 48px;
   --font-size-caption: 12px;
+  --font-size-sm: 14px;
 
   --font-size-sub-heading-lg: 18px;
   --font-size-sub-heading: 16px;
