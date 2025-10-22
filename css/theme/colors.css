@@ -31,7 +31,7 @@
   --background-primary: var(--neutral-100);
   --background-secondary: var(--blue-50);
   --background-teriary: var(--blue-900);
-  --foreground-color: var(--black);
+  --foreground-color: var(--neutral-500);
   --border: var(--neutral-300);
   --border-gray: var(--neutral-400);
   --border-error: var(--red-200);

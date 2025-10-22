@@ -48,13 +48,6 @@ p:last-child {
   flex-direction: column;
   gap: 24px;
 }
-.list-ul {
-  margin-bottom: 24px;
-}
-.list-ul li {
-  list-style-type: disc;
-  margin-left: 20px;
-}
 
 @media (max-width: 1024px) {
   .blog-detail {
