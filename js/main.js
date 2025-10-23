@@ -231,4 +231,47 @@ document.addEventListener("DOMContentLoaded", () => {
       closeMobileNav();
     }
   });
+
+  // Toggle More/Less Posts functionality
+  const togglePostsBtn = document.getElementById("togglePostsBtn");
+  const blogList = document.querySelector(".blog-list");
+
+  if (togglePostsBtn && blogList) {
+    let isExpanded = false;
+    const initialPostsCount = 3; // Number of posts to show initially
+    const allPosts = blogList.querySelectorAll(".blog-item");
+
+    // Initially hide posts beyond the initial count
+    allPosts.forEach((post, index) => {
+      if (index >= initialPostsCount) {
+        post.style.display = "none";
+        post.classList.add("hidden-post");
+      }
+    });
+
+    togglePostsBtn.addEventListener("click", () => {
+      isExpanded = !isExpanded;
+
+      if (isExpanded) {
+        // Show all posts
+        allPosts.forEach((post) => {
+          post.style.display = "flex";
+        });
+        togglePostsBtn.textContent = "View Less Posts";
+        togglePostsBtn.classList.add("expanded");
+      } else {
+        // Hide extra posts
+        allPosts.forEach((post, index) => {
+          if (index >= initialPostsCount) {
+            post.style.display = "none";
+          }
+        });
+        togglePostsBtn.textContent = "View More Posts";
+        togglePostsBtn.classList.remove("expanded");
+
+        // Smooth scroll to blog section
+        blogList.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
 });
