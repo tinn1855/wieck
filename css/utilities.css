@@ -219,6 +219,9 @@
   text-decoration: underline;
   padding-bottom: 2px;
 }
+.text-center {
+  text-align: center;
+}
 
 /* image utilities */
 .image-rotate {
