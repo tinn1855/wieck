@@ -177,6 +177,10 @@
   color: var(--text-brand);
 }
 
+.text-white {
+  color: var(--white);
+}
+
 .text-line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -214,6 +218,9 @@
 .text-underline {
   text-decoration: underline;
   padding-bottom: 2px;
+}
+.text-center {
+  text-align: center;
 }
 
 /* image utilities */

@@ -149,86 +149,103 @@ document.addEventListener("DOMContentLoaded", () => {
     if (firstButton) firstButton.classList.add("active");
   }
 
-  const mobileNavToggle = document.getElementById("mobile-nav-toggle");
-  const mobileNavClose = document.getElementById("mobile-nav-close");
-  const mobileNavOverlay = document.getElementById("mobile-nav-overlay");
-  const mobileNavIcon = mobileNavToggle?.querySelector("i");
-  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+  // Toggle More/Less Posts functionality
+  const togglePostsBtn = document.getElementById("togglePostsBtn");
+  const blogList = document.querySelector(".blog-list");
 
-  if (mobileNavToggle) {
-    mobileNavToggle.addEventListener("click", () => {
-      const isActive = mobileNavOverlay.classList.contains("active");
+  if (togglePostsBtn && blogList) {
+    let isExpanded = false;
+    const initialPostsCount = 3; // Number of posts to show initially
+    const allPosts = blogList.querySelectorAll(".blog-item");
 
-      if (isActive) {
-        closeMobileNav();
+    // Initially hide posts beyond the initial count
+    allPosts.forEach((post, index) => {
+      if (index >= initialPostsCount) {
+        post.style.display = "none";
+        post.classList.add("hidden-post");
+      }
+    });
+
+    togglePostsBtn.addEventListener("click", () => {
+      isExpanded = !isExpanded;
+
+      if (isExpanded) {
+        // Show all posts
+        allPosts.forEach((post) => {
+          post.style.display = "flex";
+        });
+        togglePostsBtn.textContent = "View Less Posts";
+        togglePostsBtn.classList.add("expanded");
       } else {
-        openMobileNav();
+        // Hide extra posts
+        allPosts.forEach((post, index) => {
+          if (index >= initialPostsCount) {
+            post.style.display = "none";
+          }
+        });
+        togglePostsBtn.textContent = "View More Posts";
+        togglePostsBtn.classList.remove("expanded");
+
+        // Smooth scroll to blog section
+        blogList.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     });
   }
 
-  function openMobileNav() {
-    mobileNavOverlay.classList.add("active");
-    document.body.style.overflow = "hidden";
+  // Counter Animation for Stats
+  const animateCounter = (element, target, duration = 2000) => {
+    const start = 0;
+    const increment = target / (duration / 16); // 60fps
+    let current = start;
+    const hasDecimal = target % 1 !== 0;
 
-    if (mobileNavIcon) {
-      mobileNavIcon.className = "fa-solid fa-xmark";
-    }
-  }
+    const updateCounter = () => {
+      current += increment;
 
-  function closeMobileNav() {
-    mobileNavOverlay.classList.remove("active");
-    document.body.style.overflow = "";
-
-    if (mobileNavIcon) {
-      mobileNavIcon.className = "fa-solid fa-bars";
-    }
-  }
-
-  if (mobileNavClose) {
-    mobileNavClose.addEventListener("click", closeMobileNav);
-  }
-
-  if (mobileNavOverlay) {
-    mobileNavOverlay.addEventListener("click", (e) => {
-      if (e.target === mobileNavOverlay) {
-        closeMobileNav();
+      if (current >= target) {
+        element.textContent = hasDecimal
+          ? `${target.toFixed(1)}M`
+          : `${Math.round(target)}M`;
+        return;
       }
-    });
-  }
 
-  dropdownToggles.forEach((toggle) => {
-    toggle.addEventListener("click", () => {
-      const dropdownMenu = toggle.nextElementSibling;
-      const isActive = toggle.classList.contains("active");
+      element.textContent = hasDecimal
+        ? `${current.toFixed(1)}M`
+        : `${Math.round(current)}M`;
 
-      dropdownToggles.forEach((otherToggle) => {
-        if (otherToggle !== toggle) {
-          otherToggle.classList.remove("active");
-          otherToggle.nextElementSibling.classList.remove("active");
+      requestAnimationFrame(updateCounter);
+    };
+
+    requestAnimationFrame(updateCounter);
+  };
+
+  const initCounters = () => {
+    const statNumbers = document.querySelectorAll(".stat-number[data-target]");
+
+    if (statNumbers.length === 0) return;
+
+    // Intersection Observer để chỉ animate khi element vào viewport
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: "0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+          const target = parseFloat(entry.target.dataset.target);
+          const duration = parseInt(entry.target.dataset.countDuration) || 2000;
+          entry.target.dataset.animated = "true";
+          animateCounter(entry.target, target, duration);
+          observer.unobserve(entry.target);
         }
       });
+    }, observerOptions);
 
-      toggle.classList.toggle("active");
-      dropdownMenu.classList.toggle("active");
+    statNumbers.forEach((stat) => {
+      observer.observe(stat);
     });
-  });
+  };
 
-  const mobileNavLinks = document.querySelectorAll(
-    ".mobile-nav-link:not(.dropdown-toggle)"
-  );
-  mobileNavLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      if (!link.classList.contains("dropdown-toggle")) {
-        closeMobileNav();
-      }
-    });
-  });
-
-  // Handle escape key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && mobileNavOverlay.classList.contains("active")) {
-      closeMobileNav();
-    }
-  });
+  initCounters();
 });

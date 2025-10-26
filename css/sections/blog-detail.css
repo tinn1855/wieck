@@ -15,6 +15,12 @@
   aspect-ratio: 2/1;
   object-fit: cover;
 }
+.blog-detail-content p {
+  margin-bottom: 24px;
+}
+.blog-detail-content p:last-child {
+  margin-bottom: 0px;
+}
 
 .blog-card {
   background-color: var(--background-primary);
@@ -26,6 +32,7 @@
 .blog-card-content span {
   padding-bottom: 12px;
 }
+
 .blog-card img {
   aspect-ratio: 2/1;
   width: 100%;
@@ -35,14 +42,6 @@
   margin-bottom: 24px;
 }
 
-.blog-card-heading,
-p {
-  margin-bottom: 24px;
-}
-.blog-card-heading,
-p:last-child {
-  margin-bottom: 0px;
-}
 .other-post {
   display: flex;
   flex-direction: column;
