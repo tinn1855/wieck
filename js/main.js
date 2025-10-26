@@ -191,4 +191,61 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Counter Animation for Stats
+  const animateCounter = (element, target, duration = 2000) => {
+    const start = 0;
+    const increment = target / (duration / 16); // 60fps
+    let current = start;
+    const hasDecimal = target % 1 !== 0;
+
+    const updateCounter = () => {
+      current += increment;
+
+      if (current >= target) {
+        element.textContent = hasDecimal
+          ? `${target.toFixed(1)}M`
+          : `${Math.round(target)}M`;
+        return;
+      }
+
+      element.textContent = hasDecimal
+        ? `${current.toFixed(1)}M`
+        : `${Math.round(current)}M`;
+
+      requestAnimationFrame(updateCounter);
+    };
+
+    requestAnimationFrame(updateCounter);
+  };
+
+  const initCounters = () => {
+    const statNumbers = document.querySelectorAll(".stat-number[data-target]");
+
+    if (statNumbers.length === 0) return;
+
+    // Intersection Observer để chỉ animate khi element vào viewport
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: "0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+          const target = parseFloat(entry.target.dataset.target);
+          const duration = parseInt(entry.target.dataset.countDuration) || 2000;
+          entry.target.dataset.animated = "true";
+          animateCounter(entry.target, target, duration);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    statNumbers.forEach((stat) => {
+      observer.observe(stat);
+    });
+  };
+
+  initCounters();
 });

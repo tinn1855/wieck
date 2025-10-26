@@ -19,12 +19,6 @@
   overflow: hidden;
 }
 
-/* Hover */
-.blog-item:hover {
-  background-color: var(--bg-brand-secondary);
-  box-shadow: var(--shadow-lg);
-}
-
 .blog-item-image {
   width: 255px;
   flex-shrink: 0;
